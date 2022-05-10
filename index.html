@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="description" content="User Input, with JavaScript">
+    <meta name="keywords" content="immaculata, ics2o">
+    <meta name="author" content="PJ Lobetti">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="apple-touch-icon" sizes="180x180" href="./fav/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="./fav/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="./fav/favicon-16x16.png">
+    <link rel="manifest" href="./fav/site.webmanifest">
+    <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="https://code.getmdl.io/1.3.0/material.red-deep_orange.min.css" />
+    <title>Jeffy's Phillies</title>
+  </head>
+  <body>
+    <script src="./js/script.js"></script>
+	  <center>
+    <h1>Jeffy's Phillies</h1>
+		<table>
+			<tr align = "center">
+				<td valign="top" align="right">
+					<h3>This is the area where you come to order your cheese steak from Jeffy's Phillies:</h3>
+					<form action="javascript:displayCost()">						
+						<label for="size">Size:</label>
+						<select name="size" id="size">
+						    <option value="">Sizes</option>
+						    <option value="SIX_INCH">6 inch</option>
+						    <option value="TEN_INCH">10 inch</option>
+						</select>
+            <br><br>
+            <label for="toppings">Toppings:</label>
+						<select name="topping" id="topping">
+						    <option value="">Toppings</option>
+                <option value="PLAIN">Plain</option>
+						    <option value="GREEN_PEPPERS">Green peppers</option>
+						    <option value="SEASONED_MUSHROOMS">Seasoned Mushrooms</option>
+                <option value="RED_ONIONS">Red Onions</option>
+						</select>
+            <br><br>
+						<input type="submit" value="Display Cost">
+					</form>
+				</td>
+				<td valign="top" align="center">
+					<img src="./images/Philly-Cheesesteak.jpg" alt="Philly Cheese" width="50%">
+				</td>
+			</tr>
+		</table>
+		<!-- Create a space where the user information will be displayed -->
+		<div id="display-results">
+		</div>
+		  </center>
+  </body>
+</html>
