@@ -1,0 +1,20 @@
+/* Created by: PJ Lobetti
+* Created on: May 2022
+* This CSS file defines the style for index.html
+* Unit4-04-HTML-Museum
+*/
+
+body {
+	background-color: aliceblue;
+}
+
+h1 {
+	background-color: #e10e0e;
+	color: hsl(233, 82%, 20%);
+	padding: 40px;
+	text-align: center;
+}
+
+p {
+	background-color: #db1a1a;
+}

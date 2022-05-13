@@ -16,40 +16,51 @@
   </head>
   <body>
     <script src="./js/script.js"></script>
-	  <center>
     <h1>Jeffy's Phillies</h1>
 		<table>
 			<tr align = "center">
 				<td valign="top" align="right">
-					<h3>This is the area where you come to order your cheese steak from Jeffy's Phillies:</h3>
-					<form action="javascript:displayCost()">						
-						<label for="size">Size:</label>
-						<select name="size" id="size">
-						    <option value="">Sizes</option>
-						    <option value="SIX_INCH">6 inch</option>
-						    <option value="TEN_INCH">10 inch</option>
-						</select>
-            <br><br>
-            <label for="toppings">Toppings:</label>
-						<select name="topping" id="topping">
-						    <option value="">Toppings</option>
-                <option value="PLAIN">Plain</option>
-						    <option value="GREEN_PEPPERS">Green peppers</option>
-						    <option value="SEASONED_MUSHROOMS">Seasoned Mushrooms</option>
-                <option value="RED_ONIONS">Red Onions</option>
-						</select>
-            <br><br>
-						<input type="submit" value="Display Cost">
-					</form>
-				</td>
+					<h3>Order from Jeffy's Phillies:</h3>
 				<td valign="top" align="center">
 					<img src="./images/Philly-Cheesesteak.jpg" alt="Philly Cheese" width="50%">
 				</td>
 			</tr>
 		</table>
+    <form action="javascript:orderCheeseSteak()">
+
+        <p>Select the Lenght of your Philly Cheese Steak.</p>
+        <!-- Dropdown menu for burrito size -->
+        <select name="lengthCheeseSteak" id="lengthCheeseSteak">
+						<option value="sixInch">Six Inch</option>
+						<option value="tenInch">Ten Inch</option>
+				</select>
+      <p>Select the Toppings you want on your Philly.</p>
+                <!-- Multiple checkboxes for each topping available -->
+        <input type="checkbox" id="greenPeppers" name="greenPeppers">
+        <label for="Green Pepper">Green Peppers</label><br>
+        
+        <input type="checkbox" id="seasonedMushrooms" name="Seasoned-Mushrooms" value="Seasoned-Mushrooms">
+        <label for="Seasoned Mushrooms">Seasoned Mushrooms</label><br>
+        
+        <input type="checkbox" id="redOnions" name="Red-Onions" value="Red-Onions">
+        <label for="Red-Onions">Red Onions</label><br>
+        
+        <input type="checkbox" id="Plain" name="Plain" value="Plain ">
+        <label for="Plain ">Plain</label><br>
+      
+      <p>Drink or No drink</p>
+
+        <!-- Dropdown menu for drink size or no drink -->
+        <select name="arizona" id="arizona">
+						<option value="noArizona">No Arizona</option>
+            <option value="Arizona">Arizona</option>
+				</select>
+       
+         <br><br>
+      
 		<!-- Create a space where the user information will be displayed -->
 		<div id="display-results">
 		</div>
-		  </center>
+		</center>
   </body>
 </html>
