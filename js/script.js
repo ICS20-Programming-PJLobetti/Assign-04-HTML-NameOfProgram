@@ -7,9 +7,9 @@
 "use strict"
 
 /**
- * This function displays the discount depending on age and day of the week.
+ * This function displays the order
  */
-function orderCheeseSteak() {
+function orderPhilly() {
   // initialize variables (tax, subtotal, and total) + constant (taxRate)
   const taxRate = 0.13;
   let subtotal = 0;
@@ -26,7 +26,7 @@ function orderCheeseSteak() {
   const greenPepperPrice = 0.15
   const seasonedMushroomsPrice = 1.25
   const redOnionsPrice = 0.35
-  const plainPrice = 0
+  const plainPrice = 0.00
   
 	// get the length CheeseSteak of the user wants using select drop down menu
 	let lengthCheeseSteak = document.getElementById('lengthCheeseSteak');
@@ -70,10 +70,30 @@ function orderCheeseSteak() {
     orderSummary = orderSummary + " - Plain";
   }  
  // choice between no arizona or an arizona using select drop down menu
-  let drink = document.getElementById('arizona');
+  let arizonaDrink = document.getElementById('arizona');
 	let arizonaChoice = arizona.options[arizona.selectedIndex].value;
 
-  if (arizonaChoice == "noArizona") {
-    // if they selcet that they want an arizona then adda to total
+  if (arizonaChoice == "arizona") {
+    // if they select that they want an arizona then adda to total
 		subtotal = subtotal + arizona;
-     orderSummary = orderSummary + " Drink $" + arizona.toFixed(2) 
+     orderSummary = orderSummary + " Arizona $" + arizona.toFixed(2) 
+  }
+  else{
+      // if a drink size is not selected, add nothing to subtotal and update order summary
+      orderSummary = orderSummary + "<br><b>No Drink</b>"
+  }
+
+  // calculate different costs (subtotal, tax, total)
+  tax = subtotal * taxRate;
+  total = subtotal + tax;
+
+  // display the costs of the order
+  // display order summary
+  document.getElementById('order-summary').innerHTML = "<h4>" + orderSummary + "</h4>";
+  // display subtotal price of order
+  document.getElementById('display-subtotal').innerHTML = "<p>The order's subtotal is $" + subtotal.toFixed(2) + ".</p>";
+  // display tax price of order
+  document.getElementById('display-tax').innerHTML = "<p>The order's tax is $" + tax.toFixed(2) + ".</p>";
+  // display total price of order
+  document.getElementById('display-total').innerHTML = "<p>The order will cost $" + total.toFixed(2) + ".</p>";
+}

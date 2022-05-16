@@ -15,8 +15,24 @@
     <title>Jeffy's Phillies</title>
   </head>
   <body>
+    <!-- Always shows a header, even in smaller screens. -->
+<div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
+  <header class="mdl-layout__header">
+    <div class="mdl-layout__header-row">
+      <!-- Title -->
+      <span class="mdl-layout-title">Jeffy's Phillys</span>
+      <!-- Add spacer, to align navigation to the right -->
+      <div class="mdl-layout-spacer"></div>
+    </div>
+  </header>
+  <div class="mdl-layout__drawer">
+    <span class="mdl-layout-title">Jeffy's Phillys</span>
+  </div>
+  <main class="mdl-layout__content">
+    <div class="page-content"><!-- Your content goes here --></div>
+  </main>
+</div>
     <script src="./js/script.js"></script>
-    <h1>Jeffy's Phillies</h1>
 		<table>
 			<tr align = "center">
 				<td valign="top" align="right">
@@ -26,9 +42,9 @@
 				</td>
 			</tr>
 		</table>
-    <form action="javascript:orderCheeseSteak()">
+    <form action="javascript:orderPhilly()">
 
-        <p>Select the Lenght of your Philly Cheese Steak.</p>
+        <p>Select the Length of your Philly Cheese Steak.</p>
         <!-- Dropdown menu for burrito size -->
         <select name="lengthCheeseSteak" id="lengthCheeseSteak">
 						<option value="sixInch">Six Inch</option>
@@ -57,7 +73,21 @@
 				</select>
        
          <br><br>
-      
+      <!-- Submit/order button -->
+         <input type="submit" value="Order">
+      </form>
+     
+      <br>
+      <!-- Create a space where the user information will be displayed (summary of order and costs) -->
+     <div id="order-summary"></div>
+    <!-- Subtotal price -->
+     <div id="display-subtotal"> </div>
+     <!-- Tax price -->
+     <div id="display-tax"></div>
+     <!-- Total price the user must pay-->
+     <div id="display-total"></div>
+      </center>   
+     <br><br>
 		<!-- Create a space where the user information will be displayed -->
 		<div id="display-results">
 		</div>
