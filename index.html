@@ -6,91 +6,69 @@
     <meta name="keywords" content="immaculata, ics2o">
     <meta name="author" content="PJ Lobetti">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Code for favicon -->
     <link rel="apple-touch-icon" sizes="180x180" href="./fav/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="./fav/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="./fav/favicon-16x16.png">
     <link rel="manifest" href="./fav/site.webmanifest">
     <link rel="stylesheet" href="./css/style.css">
-    <link rel="stylesheet" href="https://code.getmdl.io/1.3.0/material.red-deep_orange.min.css" />
+
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" />
+    <link rel="stylesheet" href="https://code.getmdl.io/1.3.0/material.red-indigo.min.css" />
+    <link rel="stylesheet" href="./css/style.css" />
+    <!-- Checkboxes for each topping/add-in -->
+    <!-- Always shows a header, even in smaller screens. -->
     <title>Jeffy's Phillies</title>
   </head>
   <body>
-    <!-- Always shows a header, even in smaller screens. -->
-<div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
-  <header class="mdl-layout__header">
-    <div class="mdl-layout__header-row">
-      <!-- Title -->
-      <span class="mdl-layout-title">Jeffy's Phillys</span>
-      <!-- Add spacer, to align navigation to the right -->
-      <div class="mdl-layout-spacer"></div>
-    </div>
-  </header>
-  <div class="mdl-layout__drawer">
-    <span class="mdl-layout-title">Jeffy's Phillys</span>
-  </div>
-  <main class="mdl-layout__content">
-    <div class="page-content"><!-- Your content goes here --></div>
-  </main>
-</div>
-    <script src="./js/script.js"></script>
+	  <center>
+    <h1>Jeffy's Phillies Order Calculator</h1>
 		<table>
 			<tr align = "center">
 				<td valign="top" align="right">
-					<h3>Order from Jeffy's Phillies:</h3>
+					<center><h3>This site allows the customer to make an order online at Jeffy's Phillies.</h3></center>
+					<form action="javascript:displayCost()">	
+            <h4>Select your toppings here (optional):</h4>
+<!-- Checkboxes for each topping/add-in -->
+        <input type="checkbox" id="SEASONED_MUSHROOMS" name="SEASONED_MUSHROOMS">
+        <label for="SEASONED_MUSHROOMS">Seasoned Mushrooms</label><br>
+        
+        <input type="checkbox" id="GREEN_PEPPERS" name="GREEN_PEPPERS" value="GREEN_PEPPERS">
+        <label for="GREEN_PEPPERS">Green Peppers</label><br>
+        
+        <input type="checkbox" id="RED_ONIONS" name="RED_ONIONS" value="RED_ONIONS">
+        <label for="RED_ONIONS">Red Onions</label><br>
+        
+        <input type="checkbox" id="PLAIN" name="PLAIN" value="PLAIN">
+        <label for="PLAIN">Plain</label><br>
+        
+						<br><br>
+            <h4>Select the size of Cheese Steak (mandatory):</h4>
+       <!-- Code for drop-down menu (sizes) -->		
+						<label for="size">Size:</label>
+						<select name="sizePhilly" id="sizePhilly">
+						    <option value="sixInch">6-Inch</option>
+						    <option value="tenInch">10-Inch</option>
+						    <option value="foot">Foot-long(12-Inch)</option>
+						</select>
+						<br><br>
+						<input type="submit" value="Display Order">
+					</form>
+				</td>
+        <!-- Code for image -->
 				<td valign="top" align="center">
-					<img src="./images/Philly-Cheesesteak.jpg" alt="Philly Cheese" width="50%">
+					<img src="./images/Philly-Cheesesteak.jpg" alt="Boba" width="50%">
 				</td>
 			</tr>
 		</table>
-    <form action="javascript:orderPhilly()">
-
-        <p>Select the Length of your Philly Cheese Steak.</p>
-        <!-- Dropdown menu for burrito size -->
-        <select name="lengthCheeseSteak" id="lengthCheeseSteak">
-						<option value="sixInch">Six Inch</option>
-						<option value="tenInch">Ten Inch</option>
-				</select>
-      <p>Select the Toppings you want on your Philly.</p>
-                <!-- Multiple checkboxes for each topping available -->
-        <input type="checkbox" id="greenPeppers" name="greenPeppers">
-        <label for="Green Pepper">Green Peppers</label><br>
-        
-        <input type="checkbox" id="seasonedMushrooms" name="Seasoned-Mushrooms" value="Seasoned-Mushrooms">
-        <label for="Seasoned Mushrooms">Seasoned Mushrooms</label><br>
-        
-        <input type="checkbox" id="redOnions" name="Red-Onions" value="Red-Onions">
-        <label for="Red-Onions">Red Onions</label><br>
-        
-        <input type="checkbox" id="Plain" name="Plain" value="Plain ">
-        <label for="Plain ">Plain</label><br>
-      
-      <p>Drink or No drink</p>
-
-        <!-- Dropdown menu for drink size or no drink -->
-        <select name="arizona" id="arizona">
-						<option value="noArizona">No Arizona</option>
-            <option value="Arizona">Arizona</option>
-				</select>
-       
-         <br><br>
-      <!-- Submit/order button -->
-         <input type="submit" value="Order">
-      </form>
-     
-      <br>
-      <!-- Create a space where the user information will be displayed (summary of order and costs) -->
-     <div id="order-summary"></div>
-    <!-- Subtotal price -->
-     <div id="display-subtotal"> </div>
+      <!--  where the cost of the order will be displyed -->
+     <div id="finalOrder"></div>
+    <!-- total price -->
+     <div id="displayTotal"> </div>
      <!-- Tax price -->
-     <div id="display-tax"></div>
-     <!-- Total price the user must pay-->
-     <div id="display-total"></div>
-      </center>   
+     <div id="displayTax"></div>
+     <!-- Total price with tax included-->
+     <div id="displayPriceTaxed"></div>  
      <br><br>
-		<!-- Create a space where the user information will be displayed -->
-		<div id="display-results">
-		</div>
-		</center>
   </body>
 </html>
