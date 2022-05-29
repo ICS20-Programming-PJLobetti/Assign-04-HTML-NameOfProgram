@@ -65,7 +65,7 @@ else if (phillySize == "tenInch") {
   let pChosen = document.getElementById("PLAIN").checked;  
   if (pChosen){  
     price = price + PLAIN;
-    finalOrder = finalOrder + "<br> Regular boba added";
+    finalOrder = finalOrder + "<br> Nothing added";
   }  
   tax = price * HST;
   priceTaxed = price + tax;
